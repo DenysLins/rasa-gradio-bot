@@ -5,7 +5,7 @@
 This is a simple chatbot that uses Rasa for the backend and Gradio for the frontend. The chatbot is trained on a dataset
 of conversations between a user and a chatbot.
 
-![Screenshot](./screenshot.png)
+![Screenshot](./Screenshot.png)
 
 ### Requirements
 
