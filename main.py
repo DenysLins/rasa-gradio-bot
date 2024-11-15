@@ -2,7 +2,7 @@ import gradio as gr
 import requests
 import json
 
-chatbot_url = "http://0.0.0.0:3000/webhooks/rest/webhook"
+chatbot_url = "http://0.0.0.0:5005/webhooks/rest/webhook"
 
 
 def post_message(text):
@@ -28,14 +28,13 @@ def post_message(text):
 
 
 with gr.Blocks() as demo:
-    chatbot = gr.Chatbot(type="messages", height=300)
+    chatbot = gr.Chatbot(type="messages", height=600)
     msg = gr.Textbox()
 
 
     def respond(message, chat_history):
         bot_message = post_message(message)
-        chat_history.append({"role": "user", "content": message})
-        chat_history.append({"role": "assistant", "content": bot_message})
+        chat_history.append((message, bot_message))
         return "", chat_history
 
 
